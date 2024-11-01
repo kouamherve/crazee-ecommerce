@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const LoginPage = () => {
+export const LoginForm = () => {
   const [username, setUsername] = useState("");
 
   const handleSubmit = (event) => {
@@ -14,20 +14,18 @@ export const LoginPage = () => {
   };
 
   return (
-    <div>
+    <form action="submit" onSubmit={handleSubmit}>
       <h1>Welcome home!</h1>
       <br />
       <h2>Log In</h2>
-      <form action="submit" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter your username..."
-          value={username}
-          onChange={handleChange}
-          required
-        />
-        <button>Access your space</button>
-      </form>
-    </div>
+      <input
+        type="text"
+        placeholder="Enter your username..."
+        value={username}
+        onChange={handleChange}
+        required
+      />
+      <button>Access your space</button>
+    </form>
   );
 };
